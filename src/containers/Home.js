@@ -1,19 +1,49 @@
-import React, { useEffect, useState } from 'react';
-
-import { userAPI } from '../api/userAPI';
+import React from 'react';
 import LoadingScreen from '../components/LoadingScreen';
 import './table.css';
 
+const users = [
+  {
+    id: 1,
+    name: 'Leanne Graham',
+    email: 'Sincere@april.biz'
+  },
+  {
+    id: 1,
+    name: 'Leanne Graham',
+    email: 'Sincere@april.biz'
+  },
+  {
+    id: 2,
+    name: 'Leanne Graham',
+    email: 'Sincere@april.biz'
+  },
+  {
+    id: 3,
+    name: 'Leanne Graham',
+    email: 'Sincere@april.biz'
+  },
+  {
+    id: 4,
+    name: 'Leanne Graham',
+    email: 'Sincere@april.biz'
+  },
+  {
+    id: 5,
+    name: 'Leanne Graham',
+    email: 'Sincere@april.biz'
+  },
+  {
+    id: 6,
+    name: 'Leanne Graham',
+    email: 'Sincere@april.biz'
+  }
+];
+
 export default function Home() {
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    userAPI.fetchUsers().then((users) => {
-      setUsers(users);
-    });
-  }, [users]);
   return (
     <>
-      {users.length === 0 && <LoadingScreen />}
+      <LoadingScreen />
       <table className="table">
         <thead>
           <tr>
